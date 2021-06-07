@@ -11,8 +11,8 @@ from django.utils.translation import ugettext_lazy as _
 class Performance(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     channel= models.CharField(_("Channel"), max_length=25)
-    country	= models.CharField(_("Channel"), max_length=25)
-    os = models.CharField(_("Channel"), max_length=25)
+    country	= models.CharField(_("Country"), max_length=25)
+    os = models.CharField(_("Os"), max_length=25)
     impressions = models.IntegerField(_("Impressions"), default=0)
     clicks = models.IntegerField(_("Clicks"), default=0)
     installs =models.IntegerField(_("Installs"), default=0)
