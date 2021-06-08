@@ -1,14 +1,11 @@
-from django.shortcuts import get_object_or_404
-from rest_framework import viewsets
+from rest_framework import generics
+from rest_framework import filters
 from rest_framework.response import Response
 from .models import Performance
 from .serializers import PerformanceSerializer
 
-class PerformanceViewSet(viewsets.ModelViewSet):
+class PerformanceListView(generics.ListAPIView):
     queryset = Performance.objects.all()
     serializer_class = PerformanceSerializer
-
-    def list(self, request):
-        queryset = Performance.objects.all()
-        serializer = PerformanceSerializer(queryset, many=True)
-        return Response(serializer.data)
+    filter_backends = [filters.OrderingFilter]
+    ordering_fields = '__all__'

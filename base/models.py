@@ -1,7 +1,5 @@
-import uuid
 from django.urls import reverse
 from django.core.validators import RegexValidator
-from datetime import datetime
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
@@ -9,7 +7,7 @@ from django.utils.translation import ugettext_lazy as _
 
 # Create your models here.
 class Performance(models.Model):
-    date = models.DateField(_("Date"),auto_now_add=True, editable=False)
+    date = models.DateField(_("Date"), editable=False)
     channel= models.CharField(_("Channel"), max_length=25)
     country	= models.CharField(_("Country"), max_length=25)
     os = models.CharField(_("Os"), max_length=25)

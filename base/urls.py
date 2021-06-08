@@ -1,6 +1,9 @@
-from .views import PerformanceViewSet
-from rest_framework.routers import SimpleRouter
+from django.urls import include, path
+from  .views import PerformanceListView
+urlpatterns = [
+    path('performances/',PerformanceListView.as_view(),name='performances-create-list')
 
-router = SimpleRouter()
-router.register(r'performances', PerformanceViewSet, basename='performance')
-urlpatterns = router.urls
+]
+
+
+
