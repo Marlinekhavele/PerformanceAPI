@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "base",
     'rest_framework',
+    'import_export',
+
+
 ]
 
 MIDDLEWARE = [
@@ -125,7 +128,20 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = "/static/"
+IMPORT_EXPORT_USE_TRANSACTIONS = True
+
+
+STATIC_ROOT = BASE_DIR / "static"
+STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / 'static'] # for swagger
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': (
+        'django_filters.rest_framework.DjangoFilterBackend',
+    ),
+}
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
