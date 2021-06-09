@@ -82,8 +82,18 @@ DB Configuration
 
 #### Common API use-cases:
 
-```use case
-1. select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
+```
+
+1. => select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
+channel | country | impressions | clicks
+------------------+---------+-------------+--------
+adcolony | US | 532608 | 13089
+apple_search_ads | US | 369993 | 11457
+vungle | GB | 266470 | 9430
+vungle | US | 266976 | 7937
+...
+
+
 
 2. select os,sum(installs) as installs from base_performance where date > '2017-05-01' and os = 'ios' group by date,os order by date ASC;
 
