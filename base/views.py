@@ -8,5 +8,8 @@ class PerformanceListView(generics.ListAPIView):
     queryset = Performance.objects.all()
     serializer_class = PerformanceSerializer
     filter_backends = [filters.OrderingFilter]
-    filterset_fields = {'date':['gte','lte']}
+    filterset_fields = {
+        'date':['gte','lte'],
+        'os':['exact']
+    }
     ordering_fields = '__all__'

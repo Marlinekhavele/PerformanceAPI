@@ -77,6 +77,20 @@ DB Configuration
 
 ```http
   GET /api/v1/performances
+
+```
+
+#### Common API use-cases:
+
+```use case
+1. select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
+
+2. select os,sum(installs) as installs from base_performance where date > '2017-05-01' and os = 'ios' group by date,os order by date ASC;
+
+3. select os,sum(revenue) as revenue from base_performance where date > '2017-06-01' and country = 'US' group by os order by revenue desc;
+
+4.
+
 ```
 
 ## Tech Stack
@@ -110,7 +124,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
-Common API use-cases:
-
-1. select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
