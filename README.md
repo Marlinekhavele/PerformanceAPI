@@ -83,25 +83,41 @@ DB Configuration
 #### Common API use-cases:
 
 ```
+1.=> select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
 
-1. => select channel, country, sum(impressions) as impressions, sum(clicks) as clicks from base_performance where date < '2017-06-01' group by channel, country order by clicks desc;
-channel | country | impressions | clicks
+     channel      | country | impressions | clicks
 ------------------+---------+-------------+--------
-adcolony | US | 532608 | 13089
-apple_search_ads | US | 369993 | 11457
-vungle | GB | 266470 | 9430
-vungle | US | 266976 | 7937
-...
-
-
-
-2. select os,sum(installs) as installs from base_performance where date > '2017-05-01' and os = 'ios' group by date,os order by date ASC;
-
-3. select os,sum(revenue) as revenue from base_performance where date > '2017-06-01' and country = 'US' group by os order by revenue desc;
-
-4.
+ adcolony         | US      |      498861 |  12277
+ apple_search_ads | US      |      347554 |  10738
+ vungle           | GB      |      249197 |   8831
+ vungle           | US      |      249618 |   7440
+ unityads         | US      |      201584 |   6888
+ google           | US      |      198077 |   5884
+ ...
+```
 
 ```
+2.=> select os,sum(installs) as installs from base_performance where date > '2017-05-01' and os = 'ios' group by date,os order by date ASC;
+
+os        |installs
++---------+----------+
+ios       | 755      |
+ios       | 765      |
+ios       | 745      |
+ios       | 816      |
+ ...
+```
+
+```
+3.=>  select os,sum(revenue) as revenue from base_performance where date > '2017-06-01' and country = 'US' group by os order by revenue desc;
+os        |installs
++---------+----------+
+ios       | 49748.25     |
+android   | 37086.29     |
+
+```
+
+4.
 
 ## Tech Stack
 
