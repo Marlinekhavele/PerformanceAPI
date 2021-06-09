@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "base",
     'rest_framework',
+    'rest_framework_swagger',
     'django_filters',
     'import_export',
 
@@ -63,7 +64,7 @@ ROOT_URLCONF = "app.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR/ 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -132,9 +133,9 @@ USE_TZ = True
 IMPORT_EXPORT_USE_TRANSACTIONS = True
 
 
-STATIC_ROOT = BASE_DIR / "static"
+STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = '/static/'
-# STATICFILES_DIRS = [BASE_DIR / 'static'] # for swagger
+STATICFILES_DIRS = [BASE_DIR / 'static'] # for swagger
 
 
 REST_FRAMEWORK = {

@@ -73,6 +73,12 @@ DB Configuration
   http://localhost:8000/api/v1/docs
 ```
 
+#### Get all performances
+
+```http
+  GET /api/v1/performances
+```
+
 ## Tech Stack
 
 **Server:** Python version 3, Django, Djangorestframework
