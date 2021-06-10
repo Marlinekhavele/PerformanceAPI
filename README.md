@@ -117,7 +117,15 @@ android   | 37086.29     |
 
 ```
 
-4.
+```
+4.=>  select sum(spend / installs) AS cpi, channel  from base_performance  where country = 'CA' group by channel order by cpi desc;
+cpi                   |channel
++---------------------+----------+
+170.0000000000000000   | unityads    |
+123. 9024568799531779  | facebook    |
+116.0000000000000000   |chartboost   |
+107.9229139533656316   |google       |
+```
 
 ## Tech Stack
 
